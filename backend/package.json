@@ -1,5 +1,5 @@
 {
-  "name": "pec-event-management-backend",
+  "name": "akeventz-backend",
   "version": "1.0.0",
   "description": "Event Management System backend for Pragati Engineering College",
   "main": "server.js",
