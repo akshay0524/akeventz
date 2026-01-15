@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-text-main bg-background font-sans antialiased text-white overflow-x-hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-hero tracking-widest uppercase;
+}
+
+@layer components {
+
+  /* Tech Grid Background */
+  .tech-pattern {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, #1f1f1f 1px, transparent 1px),
+      linear-gradient(to bottom, #1f1f1f 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  }
+
+  .btn-primary {
+    @apply bg-white text-black font-sans font-bold uppercase tracking-wider px-8 py-3 rounded-none hover:bg-secondary hover:text-black transition-all duration-300 clip-path-slant;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-secondary border border-secondary font-sans font-bold uppercase tracking-wider px-8 py-3 rounded-none hover:bg-secondary/10 transition-all duration-300;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-bold uppercase tracking-wide px-6 py-2 rounded-none transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-surface border border-neutral-800 hover:border-secondary transition-colors duration-300 shadow-none rounded-none;
+  }
+
+  .input-field {
+    @apply w-full bg-black border border-neutral-700 text-white rounded-none px-4 py-3 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all duration-200 font-sans;
+  }
+
+  .gradient-text {
+    @apply text-white font-hero font-bold;
+  }
+
+  .nav-link {
+    @apply text-gray-400 hover:text-secondary transition-colors duration-200 font-sans font-bold tracking-widest text-xs uppercase;
+  }
+
+  .nav-link-active {
+    @apply text-secondary;
+  }
+
+  /* Custom utility for visual flair to match the reference image's small accent shapes */
+  .clip-path-slant {
+    clip-path: polygon(90% 0, 100% 25%, 100% 100%, 10% 100%, 0% 75%, 0 0);
+  }
+}
