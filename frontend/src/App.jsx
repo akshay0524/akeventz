@@ -18,6 +18,7 @@ const App = () => {
       <main className="px-4 py-8 pt-24 max-w-6xl mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/events/:id" element={<EventDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
