@@ -25,23 +25,14 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("token", data.data.token);
   };
 
-  const register = async (data) => {
-    const res = await fetch("http://localhost:5000/api/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+  const register = async (userData) => {
+    const { data } = await api.post("/auth/register", userData);
 
-    const result = await res.json();
-
-    if (!res.ok) {
-      throw new Error(result.message || "Registration failed");
-    }
-
-    localStorage.setItem("token", result.data.token);
-    setUser(result.data.user);
+    // Auto-login after register
+    setUser(data.data.user);
+    setToken(data.data.token);
+    localStorage.setItem("user", JSON.stringify(data.data.user));
+    localStorage.setItem("token", data.data.token);
   };
 
   const logout = () => {
