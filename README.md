@@ -1,42 +1,57 @@
-# PEC Event Management System
+# AkEventzz - Next-Gen Event Propulsion System
 
-Production-ready event management module for Pragati Engineering College with Node.js/Express, MongoDB, React, and Tailwind CSS. Supports student registrations, admin control, attendance, and in-app/email notifications.
+![AkEventzz Banner](https://placehold.co/1200x400/000000/00F0FF?text=AkEventzz+Architecture)
 
-## Stack
-- Backend: Node.js, Express, MongoDB (Mongoose), JWT, bcrypt, Nodemailer (optional email), express-validator, Helmet, CORS, Morgan
-- Frontend: React (Vite), React Router, Axios, Tailwind CSS
+AkEventzz is a futuristic, full-stack event management platform designed with the **Auriga** design system. It features a hyper-modern UI, secure authentication, and a robust admin dashboard for managing mission-critical events.
 
-## Quick Start
-1) Clone repo and create `.env` from `.env.example` at project root.
-2) Backend
-```bash
-cd backend
-npm install
-npm run dev  # http://localhost:5000
-```
-3) Frontend
-```bash
-cd frontend
-npm install
-npm run dev  # http://localhost:3000
-```
+## 🚀 Live Demo
+- **Frontend:** [https://akshay0524.github.io/akeventz/](https://akshay0524.github.io/akeventz/)
+- **Backend API:** [https://akeventz-backend.onrender.com](https://akeventz-backend.onrender.com)
 
-## Environment
-Update `.env` with Mongo URI, JWT secret, client URL, and email SMTP if using email alerts. `VITE_API_URL` must point to the backend `/api` base.
+## 🛠️ Tech Stack
 
-## Development Notes
-- MVC layout under `backend/` with feature routes/controllers/models/services.
-- Central error handling, validation, and role-based auth middleware.
-- In-app notifications persisted to MongoDB; email optional.
-- Attendance export provides CSV per event.
+### Frontend
+- **React (Vite)**
+- **Tailwind CSS** (Auriga Theme)
+- **Framer Motion** (Animations)
+- **Axios** (API Communication)
 
-## Scripts
-- Backend: `npm run dev` (nodemon), `npm start`
-- Frontend: `npm run dev`, `npm run build`, `npm run preview`
+### Backend
+- **Node.js** & **Express**
+- **MongoDB** (Atlas Cloud)
+- **JWT** (Authentication)
+- **Bcrypt** (Encryption)
 
-## Testing
-See `docs/testing.md` for API smoke tests and manual flows.
+## 🏗️ Local Setup
 
-## API Reference
-Endpoints and payloads are documented in `docs/api.md`.
-# akeventz
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/akshay0524/akeventz.git
+    cd akeventz
+    ```
+
+2.  **Backend Setup**
+    ```bash
+    cd backend
+    npm install
+    # Create .env file with:
+    # MONGO_URI=your_mongodb_connection_string
+    # JWT_SECRET=your_secret_key
+    # PORT=5000
+    npm run dev
+    ```
+
+3.  **Frontend Setup**
+    ```bash
+    cd frontend
+    npm install
+    # Create .env file with:
+    # VITE_API_URL=http://localhost:5000/api
+    npm run dev
+    ```
+
+## 🔐 Admin Access
+To access the admin dashboard, you can use the built-in seed scripts in `backend/scripts/` or manually create a user with `role: "admin"` in your database.
+
+---
+*Built with code and conviction.*

@@ -83,7 +83,7 @@ const Home = () => {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4 text-[10px] font-mono text-gray-500 uppercase tracking-widest">
+                  <div className="flex items-center gap-2 mb-4 text-[10px] font-mono text-gray-400 uppercase tracking-widest">
                     <span>{new Date(evt.date).toLocaleDateString()}</span>
                     <span>//</span>
                     <span>{new Date(evt.date).toLocaleTimeString()}</span>
@@ -93,12 +93,12 @@ const Home = () => {
                     {evt.title}
                   </h3>
 
-                  <p className="text-gray-400 text-sm font-sans mb-6 line-clamp-2">
+                  <p className="text-gray-300 text-sm font-sans mb-6 line-clamp-2">
                     {evt.description}
                   </p>
 
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                    <div className="flex items-center text-xs text-gray-500 font-mono">
+                    <div className="flex items-center text-xs text-gray-400 font-mono">
                       <span className="mr-2">LOC:</span>
                       {evt.location}
                     </div>
