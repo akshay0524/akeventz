@@ -1,4 +1,4 @@
-# Deployment Guide for Auriga System
+# Deployment Guide for AkEventzz System
 
 This application (MERN Stack) consists of two parts: **Frontend (React/Vite)** and **Backend (Node/Express)**.
 To make it accessible to everyone without errors, you must deploy both parts to a public hosting provider, as GitHub Pages only supports static frontend sites.
@@ -23,7 +23,7 @@ To make it accessible to everyone without errors, you must deploy both parts to 
 1. Push your code to a GitHub repository.
 2. Sign up for [Render](https://render.com/).
 3. Create a **New Web Service**.
-4. Connect your GitHub repo.
+4. Connect your GitHub repo (`akeventz`).
 5. **Settings:**
    - **Root Directory:** `backend` (Important!)
    - **Build Command:** `npm install`
@@ -33,7 +33,7 @@ To make it accessible to everyone without errors, you must deploy both parts to 
    - `MONGO_URI`: (Your MongoDB Connection String)
    - `JWT_SECRET`: (A random secret key)
    - `PORT`: `3000` (or leave blank, Render manages this)
-7. Deploy! Note down your backend URL (e.g., `https://pec-backend.onrender.com`).
+7. Deploy! Note down your backend URL (e.g., `https://akeventz-backend.onrender.com`).
 
 ## Step 3: Configure Frontend for Production
 
@@ -50,7 +50,7 @@ To make it accessible to everyone without errors, you must deploy both parts to 
 
 1. Sign up for [Vercel](https://vercel.com/).
 2. "Add New Project" -> Import from GitHub.
-3. Select your repository.
+3. Select your repository (`akeventz`).
 4. **Settings:**
    - **Root Directory:** `frontend` (Edit the root directory setting).
    - **Framework Preset:** Vite (Should detect automatically).
@@ -59,5 +59,5 @@ To make it accessible to everyone without errors, you must deploy both parts to 
 
 ## ✅ Done!
 
-Your users can now visit the Vercel URL (e.g., `https://auriga-events.vercel.app`), and it will perform API calls to your Render backend, which talks to MongoDB Atlas.
+Your users can now visit the Vercel URL (e.g., `https://akeventz.vercel.app`), and it will perform API calls to your Render backend, which talks to MongoDB Atlas.
 This ensures no "it works on my machine" errors for other users.
