@@ -69,42 +69,42 @@ const Home = () => {
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {events.map((evt) => (
-              <div key={evt._id} className="group bg-neutral-900 border border-neutral-800 hover:border-secondary transition-all duration-300 relative overflow-hidden">
-                <div className="aspect-video bg-neutral-800 relative group-hover:bg-neutral-800/50 transition-colors">
-                  <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
-                    <span className="text-6xl font-hero font-bold text-white/10 group-hover:text-secondary/20 scale-150">A</span>
+              <div key={evt._id} className="group bg-neutral-900 border border-neutral-700 hover:border-secondary hover:shadow-[0_0_15px_rgba(0,240,255,0.3)] transition-all duration-300 relative overflow-hidden flex flex-col">
+                <div className="aspect-video bg-neutral-800 relative group-hover:bg-neutral-800/80 transition-colors border-b border-neutral-700">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity">
+                    <span className="text-6xl font-hero font-bold text-white/20 group-hover:text-secondary/40 scale-150 transition-all duration-500">A</span>
                   </div>
                   <div className="absolute top-0 right-0 p-4">
-                    <span className={`px-2 py-1 text-[10px] font-bold uppercase tracking-widest border ${evt.availableSeats > 0 ? 'text-secondary border-secondary' : 'text-red-500 border-red-500'
+                    <span className={`px-3 py-1 text-xs font-bold uppercase tracking-widest border bg-black/50 backdrop-blur-sm ${evt.availableSeats > 0 ? 'text-secondary border-secondary shadow-[0_0_10px_rgba(0,240,255,0.2)]' : 'text-red-500 border-red-500'
                       }`}>
                       {evt.availableSeats > 0 ? 'Available' : 'Locked'}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4 text-[10px] font-mono text-gray-400 uppercase tracking-widest">
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 mb-4 text-[10px] font-mono text-secondary uppercase tracking-widest">
                     <span>{new Date(evt.date).toLocaleDateString()}</span>
                     <span>//</span>
                     <span>{new Date(evt.date).toLocaleTimeString()}</span>
                   </div>
 
-                  <h3 className="text-2xl font-display font-bold text-white mb-2 leading-none group-hover:text-secondary transition-colors">
+                  <h3 className="text-2xl font-display font-bold text-white mb-3 leading-none group-hover:text-secondary transition-colors drop-shadow-lg">
                     {evt.title}
                   </h3>
 
-                  <p className="text-gray-300 text-sm font-sans mb-6 line-clamp-2">
+                  <p className="text-gray-300 text-sm font-sans mb-6 line-clamp-3 leading-relaxed">
                     {evt.description}
                   </p>
 
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                    <div className="flex items-center text-xs text-gray-400 font-mono">
-                      <span className="mr-2">LOC:</span>
+                  <div className="mt-auto pt-4 border-t border-neutral-700">
+                    <div className="flex items-center text-xs text-gray-400 font-mono mb-4">
+                      <span className="mr-2 text-secondary">LOC:</span>
                       {evt.location}
                     </div>
 
-                    <div className="flex gap-4">
-                      <Link to={`/events/${evt._id}`} className="text-xs font-bold uppercase tracking-widest hover:text-secondary text-gray-300 transition-colors">
+                    <div className="grid grid-cols-2 gap-3">
+                      <Link to={`/events/${evt._id}`} className="text-center py-2 text-xs font-bold uppercase tracking-widest border border-gray-600 text-gray-300 hover:border-white hover:text-white transition-all bg-transparent hover:bg-white/5">
                         Analyze
                       </Link>
 
@@ -112,7 +112,9 @@ const Home = () => {
                         <button
                           onClick={() => handleRegister(evt._id)}
                           disabled={evt.availableSeats === 0}
-                          className={`text-xs font-bold uppercase tracking-widest hover:text-white transition-colors ${evt.availableSeats === 0 ? 'text-red-500 cursor-not-allowed' : 'text-secondary cursor-pointer'
+                          className={`text-center py-2 text-xs font-bold uppercase tracking-widest transition-all shadow-lg ${evt.availableSeats === 0
+                            ? 'border border-red-900 text-red-500 cursor-not-allowed bg-red-900/10'
+                            : 'bg-secondary text-black hover:bg-white hover:text-black hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]'
                             }`}
                         >
                           {evt.availableSeats === 0 ? 'Full' : 'Engage'}
