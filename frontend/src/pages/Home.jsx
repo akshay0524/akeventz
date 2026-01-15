@@ -47,13 +47,16 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 py-20">
-        <div className="flex justify-between items-end mb-12 border-b border-white/10 pb-4">
-          <h2 className="text-4xl font-hero font-bold text-white">
+      <div className="max-w-[1400px] mx-auto px-6 py-20 relative">
+        {/* Glow Element */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-secondary/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="flex justify-between items-end mb-12 border-b border-white/10 pb-4 relative z-10">
+          <h2 className="text-4xl font-hero font-bold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
             Sector Events
           </h2>
           {message && (
-            <div className="bg-secondary/10 border border-secondary text-secondary px-4 py-2 text-xs font-bold uppercase tracking-wider flex items-center">
+            <div className="bg-secondary/10 border border-secondary text-secondary px-4 py-2 text-xs font-bold uppercase tracking-wider flex items-center shadow-[0_0_10px_rgba(0,240,255,0.2)]">
               <span className="mr-2 animate-pulse">●</span>
               {message}
             </div>
