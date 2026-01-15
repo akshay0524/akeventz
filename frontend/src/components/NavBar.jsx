@@ -7,6 +7,7 @@ const NavBar = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
     if (user) {
